@@ -1,0 +1,39 @@
+# nanotime
+
+
+A small C library for very precise, cross platform timestamps
+
+
+## Examples
+
+### Include file
+
+Include `nanotime.h` to use
+
+```
+#include <nanotime.h>
+```
+
+### Get current timestamp
+
+Get current UNIX timestamp as a `long double` with nanotime precision.
+
+```
+long double timestamp;
+if (NANO_UNEXPECTED(nano_time(&timestamp)) {
+    // Error handling
+}
+printf("Current time: %f\n", timestamp);
+```
+
+### Get current nanosecond
+
+Get current nanosecond as an `unsigned long`.
+
+```
+unsigned long sec;
+if (NANO_UNEXPECTED(nano_second(&sec)) {
+    // Error handling
+}
+printf("Current time: %Ld\n", sec);
+```
