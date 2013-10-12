@@ -23,23 +23,23 @@ NANO nano_return_t nano_now(struct timespec *now);
 NANO nano_return_t nano_now(struct timespec *now)
 {
 #ifdef __MACH__
-	clock_serv_t cclock;
-	mach_timespec_t mts;
+	clock_serv_t clock_service;
+	mach_timespec_t mach_time;
 
-	if (host_get_clock_service(mach_host_self(), CALENDAR_CLOCK, &cclock) != 0) {
+	if (host_get_clock_service(mach_host_self(), CALENDAR_CLOCK, &clock_service) != 0) {
 		return NANO_FAILURE;
 	}
 
-	if (clock_get_time(cclock, &mts) != 0) {
+	if (clock_get_time(clock_service, &mach_time) != 0) {
 		return NANO_FAILURE;
 	}
 
-	if (mach_port_deallocate(mach_task_self(), cclock) != 0) {
+	if (mach_port_deallocate(mach_task_self(), clock_service) != 0) {
 		return NANO_FAILURE;
 	}
 
-	now->tv_sec = mts.tv_sec;
-	now->tv_nsec = mts.tv_nsec;
+	now->tv_sec = mach_time.tv_sec;
+	now->tv_nsec = mach_time.tv_nsec;
 #else
 	if (clock_gettime(CLOCK_REALTIME, now) != 0) {
 		return NANO_FAILURE;
@@ -65,7 +65,10 @@ NANO nano_return_t current_nano_second(unsigned long *second)
 NANO nano_return_t current_nano_time(long double *time)
 {
 	struct timespec now;
-	nano_now(&now);
+
+	if (NANO_UNEXPECTED(nano_now(&now))) {
+		return NANO_FAILURE;
+	}
 
 	*time = (long double) now.tv_sec + now.tv_nsec / 1E9;
 
@@ -76,10 +79,11 @@ int main()
 {
 	unsigned long nano_sec;
 	long double now;
-	
+
 	if (NANO_UNEXPECTED(current_nano_second(&nano_sec))) {
 		return 1;
 	}
+
 	if (NANO_UNEXPECTED(current_nano_time(&now))) {
 		return 1;
 	}
