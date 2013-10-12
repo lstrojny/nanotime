@@ -10,7 +10,7 @@ A small C library for very precise, cross platform timestamps
 
 Include `nanotime.h` to use
 
-```
+```C
 #include <nanotime.h>
 ```
 
@@ -18,7 +18,7 @@ Include `nanotime.h` to use
 
 Get current UNIX timestamp as a `long double` with nanotime precision.
 
-```
+```C
 long double timestamp;
 if (NANO_UNEXPECTED(nano_time(&timestamp)) {
     // Error handling
@@ -30,7 +30,7 @@ printf("Current time: %f\n", timestamp);
 
 Get current nanosecond as an `unsigned long`.
 
-```
+```C
 unsigned long sec;
 if (NANO_UNEXPECTED(nano_second(&sec)) {
     // Error handling
