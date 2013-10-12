@@ -11,6 +11,6 @@
 #define NANO_UNEXPECTED(X) X == NANO_FAILURE
 #define nano_return_t short
 
-NANO nano_return_t current_nano_second(unsigned long *second);
-NANO nano_return_t current_nano_time(long double *time);
-NANO nano_return_t nano_now(struct timespec *now);
+NANO nano_return_t nano_second(unsigned long *second);
+NANO nano_return_t nano_time(long double *time);
+NANO nano_return_t nano_timespec(struct timespec *now);

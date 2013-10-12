@@ -8,7 +8,7 @@
 #include <sys/time.h>
 #endif
 
-NANO nano_return_t nano_now(struct timespec *now)
+NANO nano_return_t nano_timespec(struct timespec *now)
 {
 #ifdef __MACH__
 	clock_serv_t clock_service;
@@ -37,11 +37,11 @@ NANO nano_return_t nano_now(struct timespec *now)
 	return NANO_SUCCESS;
 }
 
-NANO nano_return_t current_nano_second(unsigned long *second)
+NANO nano_return_t nano_second(unsigned long *second)
 {
 	struct timespec now;
 
-	if (NANO_UNEXPECTED(nano_now(&now))) {
+	if (NANO_UNEXPECTED(nano_timespec(&now))) {
 		return NANO_FAILURE;
 	}
 
@@ -50,11 +50,11 @@ NANO nano_return_t current_nano_second(unsigned long *second)
 	return NANO_SUCCESS;
 }
 
-NANO nano_return_t current_nano_time(long double *time)
+NANO nano_return_t nano_time(long double *time)
 {
 	struct timespec now;
 
-	if (NANO_UNEXPECTED(nano_now(&now))) {
+	if (NANO_UNEXPECTED(nano_timespec(&now))) {
 		return NANO_FAILURE;
 	}
 
@@ -68,11 +68,11 @@ int main()
 	unsigned long nano_sec;
 	long double now;
 
-	if (NANO_UNEXPECTED(current_nano_second(&nano_sec))) {
+	if (NANO_UNEXPECTED(nano_second(&nano_sec))) {
 		return 1;
 	}
 
-	if (NANO_UNEXPECTED(current_nano_time(&now))) {
+	if (NANO_UNEXPECTED(nano_time(&now))) {
 		return 1;
 	}
 
