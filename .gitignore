@@ -16,9 +16,11 @@ missing
 ar-lib
 Makefile.in
 libtool
-src/.libs/
+.libs
+.deps
 src/Makefile.in
 src/libnanotime-1.0.0.la
 src/nanotime.lo
 INSTALL
 src/.deps/
+test-driver

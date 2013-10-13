@@ -1,3 +1,5 @@
+#ifndef NANOTIME_H
+#define NANOTIME_H
 #include <time.h>
 #ifdef __MACH__
 #define NANO extern
@@ -14,3 +16,4 @@
 NANO nano_return_t nano_second(unsigned long *second);
 NANO nano_return_t nano_time(long double *time);
 NANO nano_return_t nano_timespec(struct timespec *now);
+#endif
