@@ -20,3 +20,4 @@ src/.libs/
 src/Makefile.in
 src/libnanotime-1.0.0.la
 src/nanotime.lo
+INSTALL
