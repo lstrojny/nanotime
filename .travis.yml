@@ -1,6 +1,6 @@
 language: c
 
-before_script: aptitude install -y check
+before_script: apt-get install -y check
 
 script:
     - ./autogen.sh
