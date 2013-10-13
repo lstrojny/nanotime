@@ -12,8 +12,8 @@ typedef enum {
 	NANO_SUCCESS = 0
 } nano_return_t;
 
-#define NANO_EXPECTED(X) X == NANO_SUCCESS
-#define NANO_UNEXPECTED(X) X == NANO_FAILURE
+#define NANO_EXPECTED(X) (X) == NANO_SUCCESS
+#define NANO_UNEXPECTED(X) (X) != NANO_SUCCESS
 
 NANO nano_return_t nano_second(unsigned long *second);
 NANO nano_return_t nano_time(long double *time);
