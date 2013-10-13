@@ -6,7 +6,7 @@ script:
     - ./autogen.sh
     - make
     - make check
-    - cat tests/test-suite.log
+    - cat tests/test-suite.log || true
 
 notifications:
   email:
