@@ -1,5 +1,7 @@
 language: c
 
+before_script: aptitude install -y check
+
 script:
     - ./autogen.sh
     - make
