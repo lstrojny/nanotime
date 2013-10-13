@@ -1,5 +1,5 @@
 #!/bin/sh
-glibtoolize --force || libtoolize --force
+glibtoolize --force --copy || libtoolize --force --copy
 aclocal
 autoheader
 automake --force-missing --add-missing -i
