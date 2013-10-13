@@ -26,3 +26,5 @@ src/.deps/
 test-driver
 tests/check_nanotime
 *.o
+*.log
+*.trs
