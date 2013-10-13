@@ -1,8 +1,6 @@
-# nanotime
-
+# nanotime [![Build Status](https://secure.travis-ci.org/lstrojny/nanotime.png)](http://travis-ci.org/lstrojny/nanotime)
 
 A small C library for nanosecond precise, cross platform timestamps
-
 
 ## Examples
 
