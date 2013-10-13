@@ -1,7 +1,7 @@
 # nanotime
 
 
-A small C library for very precise, cross platform timestamps
+A small C library for nanosecond precise, cross platform timestamps
 
 
 ## Examples
