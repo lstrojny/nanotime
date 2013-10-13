@@ -9,7 +9,8 @@ AC_CHECK_LIB(rt, clock_gettime)
 
 PKG_CHECK_MODULES([CHECK], [check >= 0.9.0])
 
-AM_INIT_AUTOMAKE([1.10 -Wall -Werror])
+#AM_INIT_AUTOMAKE([1.10 -Wall -Werror])
+AM_INIT_AUTOMAKE([1.14 -Wall -Werror -Wno-extra-portability])
 AM_MAINTAINER_MODE
 AM_PROG_CC_C_O
 
