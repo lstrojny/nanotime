@@ -5,6 +5,7 @@
 #include <mach/mach.h>
 #include <mach/clock.h>
 #else
+#include <time.h>
 #include <sys/time.h>
 #endif
 
@@ -61,23 +62,4 @@ NANO nano_return_t nano_time(long double *time)
 	*time = (long double) now.tv_sec + now.tv_nsec / 1E9;
 
 	return NANO_SUCCESS;
-}
-
-int main()
-{
-	unsigned long nano_sec;
-	long double now;
-
-	if (NANO_UNEXPECTED(nano_second(&nano_sec))) {
-		return 1;
-	}
-
-	if (NANO_UNEXPECTED(nano_time(&now))) {
-		return 1;
-	}
-
-	printf("%ld\n", nano_sec);
-	printf("%1.10Lf\n", now);
-
-	return 0;
 }
