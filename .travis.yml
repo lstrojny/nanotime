@@ -1,0 +1,11 @@
+language: c
+
+script:
+    - ./autogen.sh
+    - make
+    - make check
+    - tests/test-suite.log
+
+notifications:
+  email:
+    - lars@strojny.net
