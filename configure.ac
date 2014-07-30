@@ -13,6 +13,7 @@ AM_INIT_AUTOMAKE([1.10 -Wall -Werror])
 #AM_INIT_AUTOMAKE([1.14 -Wall -Werror -Wno-extra-portability])
 AM_MAINTAINER_MODE
 AM_PROG_CC_C_O
+AM_PROG_AR
 
 LT_PREREQ([2.2])
 
