@@ -4,7 +4,7 @@ os:
     - linux
     - osx
 
-before_script: sudo apt-get install -y check
+before_script: sudo apt-get install -y check || brew install check
 
 script:
     - ./autogen.sh
