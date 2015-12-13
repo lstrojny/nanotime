@@ -5,7 +5,8 @@
 #include <mach/mach.h>
 #include <mach/clock.h>
 #else
-#include <linux/time.h>
+#include <time.h>
+#include <sys/time.h>
 #endif
 
 NANO nano_return_t nano_timespec(struct timespec *now)
