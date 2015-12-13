@@ -11,7 +11,7 @@ AC_CHECK_LIB(rt, clock_gettime)
 
 PKG_CHECK_MODULES([CHECK], [check >= 0.9.0])
 
-AM_INIT_AUTOMAKE([1.15 -Wall])
+AM_INIT_AUTOMAKE([1.11 -Wall])
 AM_MAINTAINER_MODE
 AM_PROG_CC_C_O
 
