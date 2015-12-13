@@ -9,7 +9,7 @@ A small C library for nanosecond precise, cross platform timestamps
 Include `nanotime.h` to use
 
 ```C
-#include <nanotime.h>
+#include <nanotime/nanotime.h>
 ```
 
 ### Get current timestamp
